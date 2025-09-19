@@ -18,8 +18,6 @@
     "component",
     "react-modal"
   ],
-  "author": "Your Name",
-  "license": "MIT",
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
