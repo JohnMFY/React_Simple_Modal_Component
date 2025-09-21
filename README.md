@@ -19,20 +19,22 @@ A simple customizable solution, easy to use.
 
     return (
         <div>
-        <button onClick={openModal}>Open Modal</button>
+
+            <button onClick={openModal}>Open Modal</button>
         
-        {isOpen && (
-            <Modal
-                modalTitle={"Modal Title"}
-                modalContent={"Modal text content"}
-                closeModal={closeModal}
-                backgroundColor={"rgba(0, 0, 0, 0.7)"}
-                modalBackgroundColor={"white"}
-                modalPadding={"0.5% 10% 0.5% 1%"}
-                iconPositionY={"43vh"}
-                iconPositionX={"121vh"}
-            />
-        )}
+            {isModalOpen && (
+                <Modal
+                    modalTitle={"modal Title"}
+                    modalContent={"modal text content"}
+                    closeModal={closeModal}
+                    modalBackgroundClass={'modalBackground'}
+                    modalClass={'modal'}
+                    modalTitleClass={'title'}
+                    modalContentClass={'content'}
+                    iconClass={'icon'}
+                />
+            )}
+
         </div>
     );
     }
@@ -45,13 +47,15 @@ A simple customizable solution, easy to use.
 
 This component uses Font Awesome for the close icon.
 
-### enter value for the props :
+### Props
 
-    modalTitle={""}
-    modalContent={""}
-    closeModal={closeModal}
-    backgroundColor={""}
-    modalBackgroundColor={""}
-    modalPadding={""}
-    iconPositionY={""}
-    iconPositionX={""}
+| Prop                  | Type     |  Required   | Description                                                                 |
+|-----------------------|----------|-------------|-----------------------------------------------------------------------------|
+| `modalTitle`          | string   | Optional    | Title of the modal.                                                         |
+| `modalContent`        | string   | yes         | Text content of the modal .                                                 |
+| `closeModal`          | function | yes         | Function to close the modal                                                 |
+| `modalBackgroundClass`| string   | Recommended | Class to customize the modal background.                                    |
+| `modalClass`          | string   | Recommended | Class to customize the modal.                                               |
+| `modalTitleClass`     | string   | no          | Class to customize the modal title (`<h3>`).                                |
+| `modalContentClass`   | string   | no          | Class to customize the content of the modal (`<p>`).                        |
+| `iconClass`           | string   | Recommended | Class to customize the cross icon used to close the modal onClick.          |
